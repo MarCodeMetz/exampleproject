@@ -1,0 +1,21 @@
+<?php
+/** @var \BlueAcorn\Weather\Block\Template $block */
+?>
+
+<div id="weather-container" data-bind="scope: 'weather'">
+    <!-- ko template: getTemplate() --> <!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#weather-container": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "weather": {
+                        "component": "BlueAcorn_Weather/js/viewModel"
+                    }
+                }
+            }
+        }
+    }
+</script>

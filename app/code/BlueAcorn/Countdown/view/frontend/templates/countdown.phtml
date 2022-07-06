@@ -1,0 +1,15 @@
+<?php
+/** @var \BlueAcorn\Countdown\Block\Template $block */
+?>
+
+<div id="countdown" data-bind="scope: 'blueacorn-countdown'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#countdown": {
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+        }
+    }
+</script>

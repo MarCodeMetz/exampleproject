@@ -1,0 +1,21 @@
+type StoreConfig
+    @doc(description: "Contains store configurations and API keys") {
+    api_key: String @doc(description: "API Keys to connect to our service")
+}
+
+type Query {
+    salesOrder(id: Int @doc(description: "Id of sales order")): SalesOrder
+        @resolver(class: "BlueAcorn\\GraphQl\\Model\\Resolver\\SalesOrder")
+        @doc(
+            description: "Sales Order query returns information about the order"
+        )
+}
+
+type SalesOrder
+    @doc(description: "Sale Order data getter of order information") {
+    increment_id: String @doc(description: "Increment Id of sales order")
+    customer_name: String @doc(description: "Customer Name on sales order")
+    grand_total: String @doc(description: "Grand Total of sales order")
+    is_guest_customer: Boolean @doc(description: "Is customer a guest user")
+    address_array: [String] @doc(description: "array of order addresses")
+}

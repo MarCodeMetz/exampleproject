@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product">
+        <!-- this plugin adds the Brand Attribute to the product name -->
+        <plugin name="ProductUpdates" type="BlueAcorn\ProductUpdates\Model\Product"/>
+    </type>
+    <type name="Magento\Checkout\Model\Cart">
+        <!-- this plugin updates the cart qty by 10 -->
+        <plugin name="AddToCartUpdates" type="BlueAcorn\ProductUpdates\Model\CartUpdate"/>        
+    </type>
+</config>
